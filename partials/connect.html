@@ -1,0 +1,22 @@
+<form>
+    <div class="form-group">
+        <label for="hostname">
+            IP:Port
+        </label>
+        <input ng-model="server.hostname" type="text" class="form-control" id="hostname" placeholder="127.0.0.1:25565">
+    </div>
+    <div class="form-group">
+        <label for="username">
+            Username
+        </label>
+        <input ng-model="server.username" type="text" class="form-control" id="username" placeholder="AzureDiamond">
+    </div>
+    <div class="form-group">
+        <label for="password">
+            Password
+        </label>
+        <input ng-model="server.password" type="password" class="form-control" id="password" placeholder="hunter2">
+    </div>
+
+    <button ng-click="connect()" class="btn btn-primary btn-block">{{ text }}</button>
+</form>

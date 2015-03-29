@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-3 col-md-push-9">
+        <div class="form-group">
+            <input type="text" ng-model="query" class="form-control" placeholder="Search">
+        </div>
+    </div>
+</div>
+<div class="players">
+    <div class="row">
+        <div class="col-sm-2" ng-repeat="player in players | filter:query | orderBy:name">
+            <div class="player" ng-click="showPlayer(player)">
+                <img class="center-block" src="https://minotar.net/helm/{{player}}/96.png">
+                <span>{{player}}</span>
+            </div>
+        </div>
+    </div>
+</div>

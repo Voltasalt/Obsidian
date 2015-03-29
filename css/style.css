@@ -1,0 +1,25 @@
+a:link, a:active, a:hover, a:visited {
+!important;
+    outline: none;
+}
+
+* {
+    outline: none !important;
+}
+
+#console {
+    font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+}
+
+.player {
+    text-align: center;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    cursor: pointer;
+}
+
+.player img {
+    margin-bottom: 5px;
+}

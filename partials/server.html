@@ -1,0 +1,14 @@
+Memory usage: <strong>{{mem.current|number:0}} / {{mem.max|number:0}} MB ({{(mem.current / mem.max * 100)|number:2}}%)</strong>
+<div class="progress">
+    <div class="progress-bar" ng-style="{'width': (mem.current / mem.max * 100)+'%'}"></div>
+</div>
+
+Disk usage: <strong>{{disk.current|number:0}} / {{disk.max|number:0}} MB ({{(disk.current / disk.max * 100)|number:2}}%)</strong>
+<div class="progress">
+    <div class="progress-bar" ng-style="{'width': (disk.current / disk.max * 100)+'%'}"></div>
+</div>
+
+Tick rate: <strong>{{tps|number:2}} / 20 tps ({{(tps / 20 * 100)|number:2}}%)</strong>
+<div class="progress">
+    <div class="progress-bar" ng-style="{'width': (tps / 20 * 100)+'%'}"></div>
+</div>
