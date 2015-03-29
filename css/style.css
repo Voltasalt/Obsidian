@@ -23,3 +23,7 @@ a:link, a:active, a:hover, a:visited {
 .player img {
     margin-bottom: 5px;
 }
+
+.chat {
+    overflow-x: hidden;
+}

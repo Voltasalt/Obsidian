@@ -6,6 +6,10 @@
                 templateUrl: 'partials/console.html',
                 controller: 'ConsoleCtrl'
             })
+            .when("/chat", {
+                templateUrl: 'partials/chat.html',
+                controller: 'ChatCtrl'
+            })
             .when("/connect", {
                 templateUrl: 'partials/connect.html',
                 controller: 'LoginCtrl'
@@ -156,6 +160,7 @@
 
     obsidianApp.factory("Performance", generateStreamFactory("performance", true));
     obsidianApp.factory("Console", generateStreamFactory("console", true));
+    obsidianApp.factory("Chat", generateStreamFactory("chat", true));
 
     obsidianApp.directive('ngEnter', function () {
         return function (scope, element, attrs) {
