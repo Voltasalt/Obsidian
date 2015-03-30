@@ -7,13 +7,12 @@ angular.module("obsidianApp").controller('FilesCtrl', function ($scope, $rootSco
         file: ""
     };
 
-    $scope.dirs = $scope.path == "/" ? [] : [{
-        name: "..",
-        fullPath: $scope.path.substr(0, $scope.path.lastIndexOf("/", $scope.path.length - 2) + 1)
-    }];
-
     var load = function() {
         $scope.files = [];
+        $scope.dirs = $scope.path == "/" ? [] : [{
+            name: "..",
+            fullPath: $scope.path.substr(0, $scope.path.lastIndexOf("/", $scope.path.length - 2) + 1)
+        }];
 
         Minecraft.call("files.list_directory", ["." + $scope.path]).then(function (data) {
             data.forEach(function (file) {
@@ -53,6 +52,12 @@ angular.module("obsidianApp").controller('FilesCtrl', function ($scope, $rootSco
     $scope.copy = function (file) {
         $rootScope.files_clipboard.mode = "copy";
         $rootScope.files_clipboard.file = file.fullPath;
+    };
+
+    $scope.delete_ = function (file) {
+        Minecraft.call("files.delete", ["." + file.fullPath]).then(function() {
+            load();
+        });
     };
 
     $scope.paste = function() {

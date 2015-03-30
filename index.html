@@ -11,12 +11,11 @@
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <script src="//cdn.rawgit.com/bitwiseshiftleft/sjcl/master/sjcl.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/codemirror.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/addon/mode/loadmode.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/meta.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/async/0.9.0/async.js"></script>
-
+    <script src="//cdn.rawgit.com/bitwiseshiftleft/sjcl/master/sjcl.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
@@ -24,7 +23,7 @@
     <script src="//cdn.rawgit.com/jorgeecardona/ansi-to-html/master/ansi2html.js"></script>
     <script src="//cdn.rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.min.js"></script>
     <script src="//cdn.rawgit.com/angular-ui/ui-codemirror/gh-pages/dist/ui-codemirror.min.js"></script>
-
+    <script src="//cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-0.12.1.min.js"></script>
 
     <script src="js/index.js"></script>
     <script src="js/MainCtrl.js"></script>
@@ -36,10 +35,11 @@
     <script src="js/PlayerCtrl.js"></script>
     <script src="js/FilesCtrl.js"></script>
     <script src="js/FileEditCtrl.js"></script>
+    <script src="js/PluginsCtrl.js"></script>
 </head>
 <body>
 <div ng-controller="MainCtrl" style="outline: none; !important">
-    <nav class="navbar navbar-default" style="border-radius: 0">
+    <nav class="navbar navbar-default navbar-inverse" style="border-radius: 0">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -58,6 +58,7 @@
                     <li ng-class="{active: path == '/chat'}"><a href="" ng-click="navigate('/chat')">Chat</a></li>
                     <li ng-class="{active: path == '/players'}"><a href="" ng-click="navigate('/players')">Players</a></li>
                     <li ng-class="{active: path == '/files/view/'}"><a href="" ng-click="navigate('/files/view/')">Files</a></li>
+                    <li ng-class="{active: path == '/plugins'}"><a href="" ng-click="navigate('/plugins')">Plugins</a></li>
                 </ul>
             </div>
         </div>

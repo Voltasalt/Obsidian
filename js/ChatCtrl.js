@@ -1,7 +1,3 @@
-function htmlEntities(str) {
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
 angular.module("obsidianApp").controller('ChatCtrl', function($scope, Minecraft, Chat) {
     $scope.lines = [];
     angular.element("#input").focus();

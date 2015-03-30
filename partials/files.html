@@ -18,6 +18,7 @@
         <span class="pull-right" style="position: relative; transform: translateY(-2px)">
             <button class="btn btn-default btn-xs" ng-click="cut(dir); $event.stopPropagation();">Cut</button>
             <button class="btn btn-default btn-xs" ng-click="copy(dir); $event.stopPropagation();">Copy</button>
+            <button class="btn btn-default btn-xs" ng-click="delete_(dir); $event.stopPropagation();">Delete</button>
         </span>
     </a>
 
@@ -27,6 +28,7 @@
             <button class="btn btn-default btn-xs" ng-click="edit(file); $event.stopPropagation();">Edit</button>
             <button class="btn btn-default btn-xs" ng-click="cut(file); $event.stopPropagation();">Cut</button>
             <button class="btn btn-default btn-xs" ng-click="copy(file); $event.stopPropagation();">Copy</button>
+            <button class="btn btn-default btn-xs" ng-click="delete_(file); $event.stopPropagation();">Delete</button>
         </span>
     </a>
 </div>

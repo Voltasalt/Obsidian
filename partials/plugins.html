@@ -1,0 +1,24 @@
+<div class="row form-group">
+    <div class="col-sm-11">
+        <input type="text" ng-model="search" typeahead="plugin for plugin in searchPlugins($viewValue)"
+               typeahead-on-select="onSelect" class="form-control">
+    </div>
+    <div class="col-sm-1">
+        <button ng-click="install()" class="btn btn-primary btn-block">Install</button>
+    </div>
+</div>
+
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="plugin in plugins">
+        <strong>{{plugin.name}}</strong> v{{plugin.version}}
+
+        <span class="pull-right">
+            <button ng-click="disable(plugin.name)" ng-if="plugin.enabled" class="btn btn-default"
+                    style="position: relative; transform: translateY(-6px)">Disable
+            </button>
+            <button ng-click="enable(plugin.name)" ng-if="!plugin.enabled" class="btn btn-primary"
+                    style="position: relative; transform: translateY(-6px)">Enable
+            </button>
+        </span>
+    </div>
+</div>
