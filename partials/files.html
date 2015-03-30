@@ -1,10 +1,12 @@
 <ol class="breadcrumb">
     <li ng-repeat="segment in breadcrumb track by $index">{{segment}}</li>
     <span class="pull-right">
-        <button class="btn btn-default btn-xs" ng-click="upload()">Upload File</button>
-        <span ng-if="clipboard">
-              {{clipboard}}
-            <button class="btn btn-default btn-xs" ng-click="paste()">Paste</button>
+        <div class="btn btn-default btn-xs file-upload">
+            <span>Upload</span>
+            <input type="file" class="upload" id="file-btn">
+        </div>
+        <span ng-if="files_clipboard.mode != 'none'">
+            <button style="position: relative; transform: translateY(-2px)" class="btn btn-default btn-xs" ng-click="paste()">Paste</button>
         </span>
     </span>
 </ol>
@@ -13,18 +15,18 @@
     <a ng-click="move(dir.fullPath)" class="list-group-item"
        ng-repeat="dir in dirs" style="padding: 10px;">
         {{ dir.name }}
-        <span class="pull-right" style="position: relative; transform: translateY(-1px)">
-            <button class="btn btn-default btn-xs" ng-click="cut(file)">Cut</button>
-            <button class="btn btn-default btn-xs" ng-click="copy(file)">Copy</button>
+        <span class="pull-right" style="position: relative; transform: translateY(-2px)">
+            <button class="btn btn-default btn-xs" ng-click="cut(dir); $event.stopPropagation();">Cut</button>
+            <button class="btn btn-default btn-xs" ng-click="copy(dir); $event.stopPropagation();">Copy</button>
         </span>
     </a>
 
     <a ng-click="edit(file)" class="list-group-item" style="padding: 10px;" ng-repeat="file in files">
         {{ file.name }}
         <span class="pull-right" style="position: relative; transform: translateY(-2px)">
-            <button class="btn btn-default btn-xs" ng-click="edit(file)">Edit</button>
-            <button class="btn btn-default btn-xs" ng-click="cut(file)">Cut</button>
-            <button class="btn btn-default btn-xs" ng-click="copy(file)">Copy</button>
+            <button class="btn btn-default btn-xs" ng-click="edit(file); $event.stopPropagation();">Edit</button>
+            <button class="btn btn-default btn-xs" ng-click="cut(file); $event.stopPropagation();">Cut</button>
+            <button class="btn btn-default btn-xs" ng-click="copy(file); $event.stopPropagation();">Copy</button>
         </span>
     </a>
 </div>

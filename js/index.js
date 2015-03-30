@@ -40,14 +40,22 @@
     });
 
     obsidianApp.factory("Minecraft", function ($rootScope) {
-        var dataStream, username, password, tag, handlers, isLoggedIn;
+        var dataStream, username, password, tag, handlers, isLoggedIn, ip, port;
         handlers = {};
         tag = 0;
 
         var methods = {
-            connect: function (ip, port) {
-                port = port || 25565;
-                dataStream = new WebSocket("ws://" + ip + ":" + port + "/api/2/websocket");
+            ip: function() {
+                return ip;
+            },
+            port: function() {
+                return port;
+            },
+            connect: function (ipp, portt) {
+                portt = portt || 25565;
+                ip = ipp;
+                port = portt;
+                dataStream = new WebSocket("ws://" + ipp + ":" + portt + "/api/2/websocket");
 
                 dataStream.onmessage = (function (data) {
                     var jsonData = JSON.parse(data.data);
@@ -77,7 +85,6 @@
                 return sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(plain));
             },
             call: function (action, args) {
-                arguments |= [];
                 var req = [
                     {
                         "name": action,
@@ -131,6 +138,12 @@
             },
             isLoggedIn: function () {
                 return isLoggedIn;
+            },
+            username: function() {
+                return username;
+            },
+            password: function() {
+                return password;
             }
         };
         return methods;

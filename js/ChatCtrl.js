@@ -7,7 +7,6 @@ angular.module("obsidianApp").controller('ChatCtrl', function($scope, Minecraft,
     angular.element("#input").focus();
 
     Chat.register(function(data) {
-        console.log(data);
         var elem = angular.element("#console")[0];
 
         if (elem != null) {
