@@ -27,3 +27,7 @@ a:link, a:active, a:hover, a:visited {
 .chat {
     overflow-x: hidden;
 }
+
+.CodeMirror {
+    height: 600px;
+}

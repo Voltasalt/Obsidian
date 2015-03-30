@@ -44,9 +44,10 @@ angular.module("obsidianApp").controller('PlayerCtrlModal', function($scope, Min
 
     $scope.ok = function() {
         Minecraft.call("server.run_command", [command + ($scope.msg.length > 0 ? " " + $scope.msg : "")]);
+        close(undefined, 200);
     };
 
     $scope.cancel = function() {
-        close(undefined, 200)
+        close(undefined, 200);
     };
 });

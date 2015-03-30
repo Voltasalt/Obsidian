@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+    <li ng-repeat="segment in breadcrumb track by $index">{{segment}}</li>
+</ol>
+
+<section>
+    <div ui-codemirror="cmOption" ng-model="content"></div>
+</section>
+
+<div class="pull-right">
+    <button class="btn btn-default" ng-click="back()">Cancel</button>
+    <button class="btn btn-primary" ng-click="save()">Save</button>
+</div>

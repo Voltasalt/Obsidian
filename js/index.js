@@ -1,10 +1,18 @@
 (function () {
-    var obsidianApp = angular.module('obsidianApp', ['ngRoute', 'LocalStorageModule', 'ansiToHtml', 'angularModalService']);
+    var obsidianApp = angular.module('obsidianApp', ['ngRoute', 'LocalStorageModule', 'ansiToHtml', 'angularModalService', 'ui.codemirror']);
     obsidianApp.config(function ($routeProvider) {
         $routeProvider
             .when("/console", {
                 templateUrl: 'partials/console.html',
                 controller: 'ConsoleCtrl'
+            })
+            .when("/files/edit:file*", {
+                templateUrl: 'partials/edit.html',
+                controller: 'FileEditCtrl'
+            })
+            .when("/files/view:file*", {
+                templateUrl: 'partials/files.html',
+                controller: 'FilesCtrl'
             })
             .when("/chat", {
                 templateUrl: 'partials/chat.html',
