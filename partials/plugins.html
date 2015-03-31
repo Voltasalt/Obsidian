@@ -1,10 +1,11 @@
-<div class="row form-group">
-    <div class="col-sm-11">
+<div class="form-group">
+    <div class="input-group">
         <input type="text" ng-model="search" typeahead="plugin for plugin in searchPlugins($viewValue)"
                typeahead-on-select="onSelect" class="form-control">
-    </div>
-    <div class="col-sm-1">
-        <button ng-click="install()" class="btn btn-primary btn-block">Install</button>
+
+        <div class="input-group-btn">
+            <button ng-click="install()" class="btn btn-primary">Install</button>
+        </div>
     </div>
 </div>
 
